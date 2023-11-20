@@ -1,55 +1,102 @@
-# Autorecon
+# Search Engine Scraper
 
-A Python script to automatically scan websites for information disclosure and vulnerabilities.
+This project is a Python-based search engine scraper that allows you to retrieve search results from Google for a given query and save them to a file. It uses the BeautifulSoup library for web scraping and the requests library for making HTTP requests.
 
 ## Features
 
-- Extracts and recursively requests links from a target domain in parallel threads
-- Checks response headers and content for clues like passwords, debugging code
-- Fuzzes common URL parameters to probe for hidden functionality 
-- Checks for default files and folders on web servers
-- Integrates a vulnerability scanning module to check for SQLi, XSS etc
-- Stores results in CSV or JSON format for analysis
-- Configurable via JSON file for number of threads, target URL etc
-- Prints output verbosely during scanning process
+- Retrieve search results from Google for a given query.
+- Filter search results based on a specified criteria.
+- Save search results to a file.
+- Handle errors and log details for troubleshooting.
+
+## Installation
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/search-engine-scraper.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd search-engine-scraper
+```
+
+3. Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
 
-1. Install dependencies
-   - `pip install -r requirements.txt`
+To use the search engine scraper, follow these steps:
 
-2. Configure script
-   - Edit `config.json` with target URL, output format etc
+1. Open a terminal or command prompt.
 
-3. Run scanning
-   - `python main.py`
+2. Navigate to the project directory.
 
-4. View results
-   - Results will be saved in the format specified in config
-   - CSV and JSON are standard output file types
+3. Run the following command:
 
-## Install Vulnerability Scanner
+```bash
+python search_engine_scraper.py [OPTIONS] QUERY [QUERY...]
+```
 
-This script integrates with a common vulnerability scanning module. Make sure to install the module used:
+Replace `QUERY` with the search query you want to retrieve results for. You can specify multiple queries separated by spaces.
 
-- `pip install fuzzrequest` # Example vulnerability scanner module
+### Options
 
-## Improvements
+- `-o, --output`: Specify the output directory for search results. Default is `search_results`.
 
-- Add proxy/agent support to avoid bot detection
-- Persist results to database for long term analysis
-- Blacklist common files that are rarely useful like images
-- Auto deploy webshells if flaws found to test exploitability
-- Schedule periodic rescan to check for changes over time
+- `-v, --verbose`: Enable verbose logging for more detailed output.
 
-## Contributing 
+Examples:
 
-Contributions welcome! Please submit any issues/pull requests.
+- Retrieve search results for a single query:
+
+```bash
+python search_engine_scraper.py "python web scraping"
+```
+
+- Retrieve search results for multiple queries:
+
+```bash
+python search_engine_scraper.py "python web scraping" "data analysis"
+```
+
+- Specify the output directory:
+
+```bash
+python search_engine_scraper.py -o output_directory "python web scraping"
+```
+
+- Enable verbose logging:
+
+```bash
+python search_engine_scraper.py -v "python web scraping"
+```
+
+## Troubleshooting
+
+If you encounter any issues or errors while using the search engine scraper, please check the following:
+
+- Ensure that you have a stable internet connection.
+
+- Make sure that the required dependencies are installed. You can install them using the `pip install -r requirements.txt` command.
+
+- Check the command-line options and arguments for any typos or incorrect usage.
+
+- If you encounter any errors, refer to the error message for more information.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
 
-Enjoy and stay safe! Let me know if any other questions.
+## Acknowledgements
 
-This provides some useful documentation on setting up and using the script, as well as ideas for future improvements to make it more full featured.
+This project was inspired by the need to scrape search engine results for various purposes. Special thanks to the developers of BeautifulSoup and requests for their excellent libraries.
