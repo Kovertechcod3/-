@@ -1,59 +1,20 @@
 {
-  "general": {
-    "app_name": "Web Scanner",
-    "version": "1.0.0" 
+  "output_dir": "search_results",
+  "search_engine_url": "https://www.google.com/search",
+  "language_param": "&lr=lang_en",
+  "pagination": {
+    "pages_to_fetch": 3,
+    "delay_between_requests": 1
   },
-
-  "target": {
-    "url": "http://example.com",
-    "exclude_urls": ["/api", "/private"] 
-  },
-
-  "requests": {
-    "timeout": 5,
-    "threads": 10,
-    "user_agent": "MyScanner/1.0"
-  },
-
-  "storage": {
-    "type": "sqlite",
-    "database": "scanner.db"
-  },
-
+  "search_criteria": "dumps",
   "logging": {
-    "level": "info", 
-    "filename": "app.log"
+    "level": "INFO",
+    "format": "%(asctime)s - %(levelname)s - %(message)s",
+    "file_path": "search_logs.log"
   },
-
-  "output": {
-    "format": "json",
-    "filename": "results.json"
-  },
-
-  "email": {
-    "enabled": true,
-    "from": "scanner@test.com",
-    "to": "security@test.com" 
-  },
-
-  "scanner": {
-    "module": "vulnerabilities",
-    "api_key": "xxx"
-  },
-
-  "tests": {
-    "enabled": true,
-    "filename": "test_results.xml"
-  },
-
-  "proxy": {
-    "use_proxy": false,
-    "url": "http://proxy:3128"
-  },
-
-  "advanced": {
-    "curl_debug": false,
-    "verbose_output": false
-  }
-
+  "user_agents": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  ]
 }
