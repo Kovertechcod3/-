@@ -1,0 +1,59 @@
+{
+  "general": {
+    "app_name": "Web Scanner",
+    "version": "1.0.0" 
+  },
+
+  "target": {
+    "url": "http://example.com",
+    "exclude_urls": ["/api", "/private"] 
+  },
+
+  "requests": {
+    "timeout": 5,
+    "threads": 10,
+    "user_agent": "MyScanner/1.0"
+  },
+
+  "storage": {
+    "type": "sqlite",
+    "database": "scanner.db"
+  },
+
+  "logging": {
+    "level": "info", 
+    "filename": "app.log"
+  },
+
+  "output": {
+    "format": "json",
+    "filename": "results.json"
+  },
+
+  "email": {
+    "enabled": true,
+    "from": "scanner@test.com",
+    "to": "security@test.com" 
+  },
+
+  "scanner": {
+    "module": "vulnerabilities",
+    "api_key": "xxx"
+  },
+
+  "tests": {
+    "enabled": true,
+    "filename": "test_results.xml"
+  },
+
+  "proxy": {
+    "use_proxy": false,
+    "url": "http://proxy:3128"
+  },
+
+  "advanced": {
+    "curl_debug": false,
+    "verbose_output": false
+  }
+
+}
